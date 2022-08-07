@@ -1,0 +1,108 @@
+
+<html>
+
+<div class="leftpane">
+    
+    <nav id="navbar" class="nav-menu navbar">
+
+
+</nav><!-- .nav-menu -->
+
+
+
+</div>
+    <div class="middlepane">
+       <div class="container" style="background-color:rgb(125, 132, 197)">
+    <form method="POST">
+    <div class="row-25">
+      <div class="col-25" style="margin-left:20%">
+        <label for="in_regex">Enter regex</label>
+      </div>
+      <div class="col-75">
+        
+          &nbsp; &nbsp; <input type="text" id="in_regex"name="in_2" placeholder="Your regex.." style="width:100%">
+        
+      </div>
+    </div>
+   
+   
+    <div class="row-75">
+      <div class="col-25" style="margin-left:20%">
+        <label for="subject">text</label>
+      </div>
+      <div class="col-75">
+        &nbsp; &nbsp; <input type="text" id="subject"name="in_1" placeholder="Your text.."style="height:250px;width:100%">
+         
+      </div>
+    </div>
+    <br>
+    <div class="row" style="margin-left:75%">
+      <input type="submit" value="Submit">
+    </div>
+    </form>
+  </div>
+  </div>
+  <div class="rightpane" style="background-color: rgb(210, 180, 198);">
+    
+        <br><br>
+    <b>The text you entered is:</b>
+        {{text}}
+    <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Returned text after applying regex
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              
+                {% for i in valid_pattern %}
+                {{ i }}
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Number of patterns:
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                {{number}} 
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+               The regex You Have entered is
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                {{regex}}  
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    
+
+ 
+  
+
+  
+    
+    </div>
+  </html>
+
